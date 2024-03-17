@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title id="title">My Dynamic Website</title>
+    <style>
+        body {
+            background-color: rgb(51, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Read the title from the text file (title.txt)
+        fetch('title.txt')
+            .then(response => response.text())
+            .then(title => {
+                // Set the title on the webpage
+                document.getElementById('title').textContent = title;
+            })
+            .catch(error => {
+                console.error('Error fetching title:', error);
+            });
+    </script>
+</body>
+</html>
